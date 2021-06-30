@@ -21,3 +21,6 @@ jobs:
 
       - name: Did we get Arm Toolchain?
         run: echo "Arm Toolchain version was '${{ steps.arm.outputs.version }}'"
+
+      - name: Where is the Arm Toolchain?
+        run: echo "Arm Toolchain is at '${{ steps.arm.outputs.install_dir }}'"
