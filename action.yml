@@ -1,0 +1,22 @@
+name: 'Get Arm Toolchain'
+description: 'Installs Arm Toolchain'
+author: 'TurtleSec'
+outputs:
+  version:
+    description: "The version of Arm Toolchain which was installed"
+    value: ${{ steps.output_version.outputs.version }}
+runs:
+  using: "composite"
+  steps:
+    - name: Install on Mac/Linux/Windows
+      run: sudo apt-get -y install gcc-arm-none-eabi || brew install --cask gcc-arm-embedded
+      shell: bash
+    - name: Fill in output variable
+      id: output_version
+      shell: bash
+      run: |
+        arm-none-eabi-gcc --version
+        echo "::set-output name=version::$(arm-none-eabi-gcc --version)"
+branding:
+  icon: "archive"
+  color: "green"
