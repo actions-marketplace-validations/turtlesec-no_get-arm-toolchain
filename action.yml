@@ -5,6 +5,9 @@ outputs:
   version:
     description: "The version of Arm Toolchain which was installed"
     value: ${{ steps.output_version.outputs.version }}
+  install_dir:
+    description: "The path to where the Arm Toolchain was installed"
+    value: ${{ steps.output_install_dir.outputs.install_dir }}
 runs:
   using: "composite"
   steps:
