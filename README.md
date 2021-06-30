@@ -14,6 +14,10 @@ No inputs
 
 The version string from "arm-none-eabi-gcc --version"
 
+### `install_dir`
+
+The path to the direcotry where arm-none-eabi-gcc was installed
+
 ## Example usage
 
 ~~~~
