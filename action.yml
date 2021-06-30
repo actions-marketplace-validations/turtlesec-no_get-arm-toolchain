@@ -14,7 +14,7 @@ runs:
 
     - name: Where is it
       shell: bash
-      run: which arm-none-eabi-gcc
+      run: dirname `which arm-none-eabi-gcc` #which arm-none-eabi-gcc
 
     - name: Fill in output variable
       id: output_version
