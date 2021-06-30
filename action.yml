@@ -19,7 +19,6 @@ runs:
       id: output_install_dir
       shell: bash
       run: |
-        INSTALL_DIR=$(dirname `which arm-none-eabi-gcc`)
         echo "::set-output name=install_dir::$(echo $INSTALL_DIR)"
 
     - name: Fill in version output variable
