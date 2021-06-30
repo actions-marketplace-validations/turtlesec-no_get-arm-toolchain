@@ -11,7 +11,8 @@ runs:
     - name: Install on Mac/Linux/Windows
       shell: bash
       working-directory: $GITHUB_ACTION_PATH
-      run: ./macos.sh || ./ubuntu.sh || powershell windows.ps1
+      run: macos.sh || ubuntu.sh || powershell windows.ps1
+
     - name: Fill in output variable
       id: output_version
       shell: bash
