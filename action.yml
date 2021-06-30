@@ -16,7 +16,14 @@ runs:
       shell: bash
       run: dirname `which arm-none-eabi-gcc` #which arm-none-eabi-gcc
 
-    - name: Fill in output variable
+    - name: Fill in install_dir output variable
+      id: output_install_dir
+      shell: bash
+      run: |
+        dirname `which arm-none-eabi-gcc`
+        echo "::set-output name=install_dir::$(dirname `which arm-none-eabi-gcc`)"
+
+    - name: Fill in version output variable
       id: output_version
       shell: bash
       run: |
