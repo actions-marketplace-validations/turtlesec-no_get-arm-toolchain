@@ -10,8 +10,7 @@ runs:
   steps:
     - name: Install on Mac/Linux/Windows
       shell: bash
-      working-directory: $GITHUB_ACTION_PATH
-      run: macos.sh || ubuntu.sh || powershell windows.ps1
+      run: $GITHUB_ACTION_PATH/macos.sh || $GITHUB_ACTION_PATH/ubuntu.sh || powershell $GITHUB_ACTION_PATH/windows.ps1
 
     - name: Fill in output variable
       id: output_version
