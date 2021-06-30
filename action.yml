@@ -9,8 +9,9 @@ runs:
   using: "composite"
   steps:
     - name: Install on Mac/Linux/Windows
-      run: powershell $GITHUB_ACTION_PATH/macos.sh || powershell $GITHUB_ACTION_PATH/ubuntu.sh || powershell $GITHUB_ACTION_PATH/windows.ps1
       shell: bash
+      working-directory: $GITHUB_ACTION_PATH
+      run: ./macos.sh || ./ubuntu.sh || powershell windows.ps1
     - name: Fill in output variable
       id: output_version
       shell: bash
