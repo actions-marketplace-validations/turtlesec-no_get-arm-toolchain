@@ -15,10 +15,6 @@ runs:
       shell: bash
       run: bash $GITHUB_ACTION_PATH/ubuntu.sh || bash $GITHUB_ACTION_PATH/macos.sh || powershell $GITHUB_ACTION_PATH/windows.ps1
 
-    - name: Where is it
-      shell: bash
-      run: dirname `which arm-none-eabi-gcc` #which arm-none-eabi-gcc
-
     - name: Fill in install_dir output variable
       id: output_install_dir
       shell: bash
@@ -29,9 +25,7 @@ runs:
     - name: Fill in version output variable
       id: output_version
       shell: bash
-      run: |
-        arm-none-eabi-gcc --version
-        echo "::set-output name=version::$(arm-none-eabi-gcc --version)"
+      run: echo "::set-output name=version::$(arm-none-eabi-gcc --version)"
 
 branding:
   icon: "archive"
