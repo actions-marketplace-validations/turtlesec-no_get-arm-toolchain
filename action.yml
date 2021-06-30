@@ -18,8 +18,7 @@ runs:
     - name: Fill in install_dir output variable
       id: output_install_dir
       shell: bash
-      run: |
-        echo "::set-output name=install_dir::$(echo $INSTALL_DIR)"
+      run: echo "::set-output name=install_dir::$(echo $INSTALL_DIR)"
 
     - name: Fill in version output variable
       id: output_version
