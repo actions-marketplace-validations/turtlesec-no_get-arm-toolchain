@@ -13,9 +13,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, windows-2019]
+        conf:
+          - name: Windows 2019
+            os: windows-2019
+            host_executable_suffix: ".exe"
+          - name: Ubuntu 20.04
+            os: ubuntu-20.04
+            host_executable_suffix: ""
+          - name: Ubuntu 18.04
+            os: ubuntu-18.04
+            host_executable_suffix: ""
+          - name: MacOS 10.15
+            os: macos-10.15
+            host_executable_suffix: ""
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.conf.os }}
     
     steps:
       - name: Checkout
@@ -30,3 +42,8 @@ jobs:
 
       - name: Where is the Arm Toolchain?
         run: echo "Arm Toolchain is at '${{ steps.arm.outputs.install_dir }}'"
+
+      - name: Test the Arm Toolchain
+        shell: bash
+        working-directory: "${{ steps.arm.outputs.install_dir }}"
+        run: ./arm-none-eabi-gcc${{ matrix.conf.host_executable_suffix}} --version
