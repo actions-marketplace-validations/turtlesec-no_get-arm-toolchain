@@ -28,6 +28,7 @@ jobs:
             host_executable_suffix: ""
 
     runs-on: ${{ matrix.conf.os }}
+    name: "${{ matrix.conf.name }}"
     
     steps:
       - name: Checkout
