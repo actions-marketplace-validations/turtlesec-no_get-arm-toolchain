@@ -1,4 +1,5 @@
 # Get Arm Toolchain GitHub Action
+[![CI](https://github.com/turtlesec-no/get-arm-toolchain/actions/workflows/main.yml/badge.svg)](https://github.com/turtlesec-no/get-arm-toolchain/actions/workflows/main.yml)
 
 Gets the Arm Toolchain
 
