@@ -13,7 +13,8 @@ runs:
   steps:
     - name: Install on Mac/Linux/Windows
       shell: bash
-      run: bash $GITHUB_ACTION_PATH/ubuntu.sh || bash $GITHUB_ACTION_PATH/macos.sh || powershell $GITHUB_ACTION_PATH/windows.ps1
+      working-directory: $GITHUB_ACTION_PATH
+      run: bash ubuntu.sh || bash macos.sh || powershell windows.ps1
 
     - name: Fill in install_dir output variable
       id: output_install_dir
