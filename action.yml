@@ -27,7 +27,8 @@ runs:
       shell: bash
       run: |
         arm-none-eabi-gcc --version
-        echo "version=$(arm-none-eabi-gcc --version)" >> $GITHUB_OUTPUT
+        echo "VERSION=$(arm-none-eabi-gcc --version)" >> $GITHUB_ENV
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
 
 branding:
   icon: "archive"
