@@ -9,6 +9,6 @@ $string = "$HOME/scoop/apps/gcc-arm-none-eabi/10.3-2021.10/bin"
 $string = $string -replace $pattern, '/'
 echo "INSTALL_DIR=$string" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-arm-none-eabi-gcc --version
-$version = "arm-none-eabi-gcc.exe (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+$version = arm-none-eabi-gcc --version | select -first 1
+echo $version
 echo "VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
