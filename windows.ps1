@@ -1,4 +1,5 @@
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+# Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
 scoop bucket add extras
 scoop install gcc-arm-none-eabi
 scoop info gcc-arm-none-eabi
