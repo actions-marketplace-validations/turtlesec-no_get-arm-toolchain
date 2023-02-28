@@ -18,12 +18,12 @@ runs:
     - name: Fill in install_dir output variable
       id: output_install_dir
       shell: bash
-      run: echo "::set-output name=install_dir::$(echo $INSTALL_DIR)"
+      run: echo "install_dir=$(echo $INSTALL_DIR)" >> $GITHUB_OUTPUT
 
     - name: Fill in version output variable
       id: output_version
       shell: bash
-      run: echo "::set-output name=version::$(arm-none-eabi-gcc --version)"
+      run: echo "version=$(arm-none-eabi-gcc --version)" >> $GITHUB_OUTPUT
 
 branding:
   icon: "archive"
